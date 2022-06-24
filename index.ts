@@ -27,13 +27,13 @@ const onConnection = async (ws: any) => {
     ws.isAlive = true
     ws.on(constants.pong, () => (ws.isAlive = true))
 
-    console.log('connection accepted!')
+    console.log(constants.connectionAccepted)
 
     let stream = createWebSocketStream(ws, { encoding: 'utf8' })
     stream._write = (chunk) => ws.send(chunk)
 
     ws.on(constants.message, (data: any) => {
-      console.log('received: %s', data)
+      console.log(constants.socketReceived, data)
 
       const [command, width, height] = data.toString().split(' ')
       const offsetWidth = Number(width)
@@ -79,7 +79,7 @@ const onConnection = async (ws: any) => {
           )
           break
         default:
-          console.log('invalid command')
+          console.log(constants.invalidCommand)
       }
 
       if (command !== constants.mousePosition) {
@@ -90,8 +90,8 @@ const onConnection = async (ws: any) => {
     })
 
     ws.on(constants.close, () => {
-      console.log('User disconnected')
-      stream.emit('close')
+      console.log(constants.userDisconnected)
+      stream.emit(constants.close)
       ws.close()
     })
   } catch (error) {

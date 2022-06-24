@@ -12,4 +12,9 @@ export const constants = {
     message: 'message',
     close: 'close',
     pong: 'pong',
+    invalidCommand:'invalid command',
+    userDisconnected: 'User disconnected',
+    connectionAccepted:'connection accepted!',
+    socketReceived: 'received: %s',
+
 }
