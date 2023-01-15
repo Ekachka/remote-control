@@ -1,0 +1,20 @@
+export const constants = {
+    mouseUp: 'mouse_up',
+    mouseDown: 'mouse_down',
+    mouseLeft: 'mouse_left',
+    mouseRight: 'mouse_right',
+    mousePosition: 'mouse_position',
+    drawCircle: 'draw_circle',
+    drawRectangle: 'draw_rectangle',
+    drawSquare: 'draw_square',
+    prntScrn: 'prnt_scrn',
+    connection: 'connection',
+    message: 'message',
+    close: 'close',
+    pong: 'pong',
+    invalidCommand:'invalid command',
+    userDisconnected: 'User disconnected',
+    connectionAccepted:'connection accepted!',
+    socketReceived: 'received: %s',
+
+}
